@@ -4,7 +4,7 @@
 #
 Name     : R-bipartite
 Version  : 2.08
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/bipartite_2.08.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bipartite_2.08.tar.gz
 Summary  : Visualising Bipartite Networks and Calculating Some (Ecological)
@@ -42,11 +42,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521232382
+export SOURCE_DATE_EPOCH=1523291320
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521232382
+export SOURCE_DATE_EPOCH=1523291320
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
