@@ -1,6 +1,12 @@
 2.11
+R-coda
+R-dotCall64
 R-fields
 R-igraph
+R-maps
+R-network
 R-permute
 R-sna
+R-spam
+R-tibble
 R-vegan

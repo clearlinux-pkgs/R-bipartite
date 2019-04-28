@@ -4,22 +4,29 @@
 #
 Name     : R-bipartite
 Version  : 2.11
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/bipartite_2.11.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bipartite_2.11.tar.gz
 Summary  : Visualising Bipartite Networks and Calculating Some (Ecological)
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-bipartite-lib = %{version}-%{release}
-Requires: R-fields
-Requires: R-igraph
-Requires: R-permute
-Requires: R-sna
-Requires: R-vegan
+Requires: R-dotCall64
+Requires: R-maps
+Requires: R-network
+Requires: R-spam
+Requires: R-tibble
+BuildRequires : R-coda
+BuildRequires : R-dotCall64
 BuildRequires : R-fields
 BuildRequires : R-igraph
+BuildRequires : R-maps
+BuildRequires : R-network
 BuildRequires : R-permute
 BuildRequires : R-sna
+BuildRequires : R-spam
+BuildRequires : R-statnet.common
+BuildRequires : R-tibble
 BuildRequires : R-vegan
 BuildRequires : buildreq-R
 
@@ -42,10 +49,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552720190
+export SOURCE_DATE_EPOCH=1556493224
 
 %install
-export SOURCE_DATE_EPOCH=1552720190
+export SOURCE_DATE_EPOCH=1556493224
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -81,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  bipartite || :
+R CMD check --no-manual --no-examples --no-codoc bipartite || :
 
 
 %files
