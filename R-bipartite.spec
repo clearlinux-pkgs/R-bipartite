@@ -4,7 +4,7 @@
 #
 Name     : R-bipartite
 Version  : 2.13
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/bipartite_2.13.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bipartite_2.13.tar.gz
 Summary  : Visualising Bipartite Networks and Calculating Some (Ecological)
