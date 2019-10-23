@@ -4,34 +4,33 @@
 #
 Name     : R-bipartite
 Version  : 2.13
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/bipartite_2.13.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bipartite_2.13.tar.gz
 Summary  : Visualising Bipartite Networks and Calculating Some (Ecological)
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-bipartite-lib = %{version}-%{release}
-Requires: R-coda
-Requires: R-dotCall64
 Requires: R-fields
 Requires: R-igraph
-Requires: R-network
 Requires: R-permute
 Requires: R-sna
-Requires: R-tibble
 Requires: R-vegan
 BuildRequires : R-coda
 BuildRequires : R-dotCall64
 BuildRequires : R-fields
 BuildRequires : R-igraph
+BuildRequires : R-maps
 BuildRequires : R-network
 BuildRequires : R-permute
 BuildRequires : R-sna
+BuildRequires : R-spam
 BuildRequires : R-statnet.common
 BuildRequires : R-tibble
 BuildRequires : R-vegan
 BuildRequires : buildreq-R
 BuildRequires : texlive
+BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -51,13 +50,13 @@ lib components for the R-bipartite package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558476924
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571803383
 
 %install
-export SOURCE_DATE_EPOCH=1558476924
+export SOURCE_DATE_EPOCH=1571803383
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -86,7 +85,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
